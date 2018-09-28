@@ -1,8 +1,6 @@
 
 ## Ignore Quest stuff
-quest.egg-info/
-quest/.QUEST_Store
-.QUEST_Store
+noaa_ncep.egg-info/
 docs/_build/
 
 ## Ignore Mac OS Stuff

@@ -7,7 +7,7 @@ import param
 
 class NCEPServiceBase(ServiceBase):
 
-    def get_features(self, **kwargs):
+    def search_catalog(self, **kwargs):
         the_feature = {"service_id": "ncep", "display_name": "ncep", "geometry": box(-180, -90, 180, 90)}
         feature = pd.DataFrame(the_feature, index=[0])
         return feature
@@ -103,7 +103,6 @@ class NCEP_NAM_Service(NCEPServiceBase):
                                              product_date=p.date, resolution=p.res, cycle_runtime=p.cycle,
                                              forecast_start=p.start, forecast_end=p.end, product_format=p.format,
                                              name_of_product=p.product)
-        print(results)
         if len(results) > 0:
             ncep.download_data(file_path, results)
             metadata = {
